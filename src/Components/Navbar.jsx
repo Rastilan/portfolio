@@ -40,9 +40,10 @@ const Navbar = ({ themeSetter }) => {
     }
   };
 
+  const highlightOnPos = () => {};
+
   return (
     <Container>
-      <LeftOfNav>Christopher Hall</LeftOfNav>
       <NavLinks>
         <li>
           <a href="#Home">Home</a>
@@ -51,6 +52,8 @@ const Navbar = ({ themeSetter }) => {
         <li>Portfolio</li>
         <li>Experience</li>
         <li>Contact</li>
+      </NavLinks>
+      <Controllers>
         <span id="light" onClick={handleLightClick}>
           <img
             src={
@@ -69,27 +72,37 @@ const Navbar = ({ themeSetter }) => {
             height="20vh"
           />
         </span>
-      </NavLinks>
+      </Controllers>
     </Container>
   );
 };
 
 const Container = styled.nav`
   z-index: 10;
-  position: sticky;
-  width: 100%;
+  position: absolute;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  right: 0;
+  height: 100%;
 `;
 const NavLinks = styled.nav`
+  top: 0;
+  right: 0;
+  margin-right: 1rem;
   list-style-type: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   width: 60%;
   margin-top: 1rem;
+  font-weight: bold;
+`;
+
+const Controllers = styled.span`
+  bottom: 1rem;
+  right: 1rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 `;
 
 const LeftOfNav = styled.div``;
